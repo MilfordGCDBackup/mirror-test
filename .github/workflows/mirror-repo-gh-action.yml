@@ -1,24 +1,17 @@
-# This is a basic workflow to help you get started with Actions
+# This is a GitHub action to mirror this repository to another repository located at
+# MilfordGCDBackup/THIS_REPOS_NAME
+# Please note that the repository must already have been created for this action to work
+# The value of GIT_PASSWORD must be set in this repo's secrets, and should be the password
+# of the MilfordGCDBackup GitHub user.
 
 name: mirror-repository
-
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 jobs:
-  # This workflow contains a single job called "build"
   mirror:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v1
       - uses: spyoungtech/mirror-action@master
