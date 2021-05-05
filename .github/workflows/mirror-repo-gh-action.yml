@@ -1,7 +1,7 @@
 # This is a GitHub action to mirror this repository to another repository located at
 # MilfordGCDBackup/THIS_REPOS_NAME
 # Please note that the repository must already have been created for this action to work
-# The value of GIT_PASSWORD must be set in this repo's secrets, and should be the password
+# The value of GIT_PASSWORD must be set in this organisation's secrets, and should be the password
 # of the MilfordGCDBackup GitHub user.
 
 name: mirror-repository
@@ -18,4 +18,4 @@ jobs:
         with:
           REMOTE: 'https://github.com/MilfordGCDBackup/mirror-test.git'
           GIT_USERNAME: MilfordGCDBackup
-          GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+          GIT_PASSWORD: ${{ secrets.MILFORDGCDBACKUP_PW }}
